@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  background: #0881a3;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+}
+
+#heading {
+  text-align:center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  color: #e1e1e1;
+  text-transform:uppercase;
+}
+
+h3 {
+  text-transform: none;
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+  font-size: 13px;
+}
+
+#trigger {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.modal {
+  color: #1f4e5f;
+  background: #a4e5d9;
+  width: 40%;
+  margin: 50px auto;
+  border-radius: 5px;
+  text-align:left;
+  -webkit-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.75);
+  z-index: 1050;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: opacity .15s linear;
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;  
+  opacity: 1;
+  display:none;
+}
+
+.large {
+  width: 65%;
+}
+
+.small {
+  width: 25%;
+}
+
+small {
+  text-align:center;
+  color: #FFF;
+}
+
+.modal-body, .modal-footer, .modal-heading {  
+  padding: 25px 20px;
+}
+
+.modal-heading {
+  border-bottom: 1px solid #c8f4de;
+}
+
+.modal-heading h2 {
+  margin: 0;
+}
+
+.modal-heading h2 i {
+  margin-right: 10px;
+}
+
+.modal-heading .close {
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  font-size: 28px;
+}
+
+.modal-heading .close:hover {
+  cursor: pointer;
+}
+
+.modal-footer {
+  border-top: 1px solid #c8f4de;
+  position: relative;
+  bottom: 0;
+}
+
+.modal-footer button, #trigger button {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  background-color: #649dad;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-weight: bold;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#trigger button {
+   width:auto;
+   margin: 0px auto;
+}
+
+.modal-footer button:hover, #trigger button:hover {
+  background-color: #ffffff;
+  color: #009ac9;
+  border-color: #009ac9;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .5;
+    z-index: 0;
+    display:none;
+}
+
+.modal-open {
+  display: block;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:#f2f2f2;
+  font-weight: bold;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-2px 10px 0 0;
+    vertical-align:middle;
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
+}
