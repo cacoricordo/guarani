@@ -29,7 +29,7 @@ package {
 		private var so:SharedObject;
 		private var nc:NetConnection;
 
-		public function SharedBall()
+		public function ShardBall()
 		{
 			nc = new NetConnection();
 			addEventListeners();
