@@ -33,7 +33,7 @@ package {
 		{
 			nc = new NetConnection();
 			addEventListeners();
-			nc.connect("rtmp://ssh101.bozztv.com:1935/ssh101/vivas");
+			nc.connect("rtmp://ssh101.bozztv.com/ssh101/vivas");
 		}
 
 		private function addEventListeners() {
