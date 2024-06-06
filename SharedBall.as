@@ -29,7 +29,7 @@ package {
 		private var so:SharedObject;
 		private var nc:NetConnection;
 
-		public function ShardBall()
+		public function SharedBall()
 		{
 			nc = new NetConnection();
 			addEventListeners();
@@ -70,7 +70,7 @@ package {
 
 
 		// pick up the ball
-		function pickup( event:MouseEvent ):void {
+		function pickdddup( event:MouseEvent ):void {
 			event.target.startDrag();
 		}
 
