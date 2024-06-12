@@ -248,38 +248,7 @@ img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!importan
         
 
 
-    
-        
-            <h2>Introduction</h2>
-        
-    
-        
-            <section class="section-block block-paragraph">
-                <div class="rich-text"><p>[This is a completely rewritten version of a post from 1st September 2011]</p><p>One of the most common forms of interaction on a computer is clicking and dragging. I use it a lot for interactive demos, such as those in my <a href="https://www.petercollingridge.co.uk/tutorials/svg/basics/">SVG tutorial</a>, and have a built <a href="https://www.petercollingridge.co.uk/tools/interactivesvgjs/">a library</a> for making simple draggable SVG diagrams.</p><p>You can find the code for all the examples on this page <a href="https://github.com/petercollingridge/code-for-blog/tree/master/svg-interaction/draggable">here</a>. This article builds up the code required step-by-step, explaining why each element is needed. If you only care about finished code, you can find it <a href="https://raw.githubusercontent.com/petercollingridge/code-for-blog/master/svg-interaction/draggable/draggable_6.svg">here</a>.</p></div>
-            </section>
-        
-    
-        
-            <div class="row">
-    <div class="col-md-7 two-col-block left-block">
-        
-
-
-    
-        
-            <section class="section-block block-paragraph">
-                <div class="rich-text"><p>This is the SVG I'm going to build on this page. It's relatively simple, but it demonstrates the code works with different element types. Some of the elements have transformations applied to them. For example, the star is rotated. There is also a static rect element which can't be dragged.</p></div>
-            </section>
-        
-    
-
-    </div>
-    <div class="col-md-5 two-col-block right-block">
-        
-
-
-    
-        
+       
             <section class="section-block block-html">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" onload="makeDraggable(evt)">
     <style>
