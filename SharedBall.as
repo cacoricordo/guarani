@@ -70,7 +70,7 @@ package {
 
 
 		// pick up the ball
-		function pickdddup( event:MouseEvent ):void {
+		function pickup( event:MouseEvent ):void {
 			event.target.startDrag();
 		}
 

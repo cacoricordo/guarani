@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:site_name" content="O GUARANI VOLTOU!">
-    <meta property="og:title" content="O Bugrão voltou.">
-    <meta property="og:description" content="Gols p/ Colecionadores">
+    <meta property="og:title" content="Mesa Tática do GUARANI FC">
+    <meta property="og:description" content="Mesa Tática para aprimoramento esportivo do Guarani Futebol Clube">
     <meta property="og:image" itemprop="image" content="http://oguaranivoltou.a0001.net/images/guarani22.svg">
     <meta property="og:type" content="website">
-    <title>o Bugrão voltou</title>
+    <title>Mesa Tática do GUARANI FC</title>
 	<link rel="shortcut icon" href="images/guarani22.ico" width=32px>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,9 +26,84 @@
    
       <article>
 		  
-	    
-			  <img src="images/guarani22.svg" alt="Paulistão" width="300" class="img-fluid navbar-brand logo"/><br>
-		  <button type="button">Gols p/ Colecionadores</button><br><br><br>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 48" onload="makeDraggable(evt)">
+            <style>
+              .background {
+                fill: #137718;
+              }
+              .static {
+                cursor: not-allowed;
+              }
+              .draggable {
+                cursor: move;
+              }
+            </style>
+            
+            <script type="text/javascript">
+              function makeDraggable(evt) {
+                var svg = evt.target;
+                svg.addEventListener('mousedown', startDrag, false);
+                svg.addEventListener('mousemove', drag, false);
+                svg.addEventListener('mouseup', endDrag, false);
+                svg.addEventListener('mouseleave', endDrag);
+        
+                function getMousePosition(evt) {
+                  var CTM = svg.getScreenCTM();
+                  return {
+                    x: (evt.clientX - CTM.e) / CTM.a,
+                    y: (evt.clientY - CTM.f) / CTM.d
+                  };
+                }
+        
+                var selectedElement, offset, transform;
+        
+                function startDrag(evt) {
+                  if (evt.target.classList.contains('draggable')) {
+                    selectedElement = evt.target;
+                    offset = getMousePosition(evt);
+        
+                    // Make sure the first transform on the element is a translate transform
+                    var transforms = selectedElement.transform.baseVal;
+        
+                    if (transforms.length === 0 || transforms.getItem(0).type !== SVGTransform.SVG_TRANSFORM_TRANSLATE) {
+                      // Create an transform that translates by (0, 0)
+                      var translate = svg.createSVGTransform();
+                      translate.setTranslate(0, 0);
+                      selectedElement.transform.baseVal.insertItemBefore(translate, 0);
+                    }
+        
+                    // Get initial translation
+                    transform = transforms.getItem(0);
+                    offset.x -= transform.matrix.e;
+                    offset.y -= transform.matrix.f;
+                  }
+                }
+        
+                function drag(evt) {
+                  if (selectedElement) {
+                    evt.preventDefault();
+                    var coord = getMousePosition(evt);
+                    transform.setTranslate(coord.x - offset.x, coord.y - offset.y);
+                  }
+                }
+        
+                function endDrag(evt) {
+                  selectedElement = false;
+                }
+              }
+             </script>
+            
+
+
+            <rect class="background" x="0" y="0" width="320" height="480"></rect>
+            <rect class="static" fill="#888" x="2" y="4" width="6" height="2"></rect>
+            <rect class="draggable" fill="#007bff" x="2" y="4" width="6" height="2" transform="translate(0.298693 -2.68824) rotate(90 5 5) translate(10 0)"></rect>
+            <ellipse class="draggable" fill="#ff00af" cx="5" cy="5" rx="3" ry="2" transform="translate(8.10828 0.497822)"></ellipse>
+            <polygon class="draggable" fill="#ffa500" transform="translate(0.497822 -2.68824) rotate(15 15 15)" points="16.9 15.6 17.4 18.2 15 17 12.6 18.2 13.1 15.6 11.2 13.8 13.8 13.4 15 11 16.2 13.4 18.8 13.8"></polygon>
+            <path class="draggable" stroke="#2bad7b" stroke-width="0.5" fill="none" d="M1 5C5 1 5 9 9 5" transform="translate(20)"></path>
+            <text class="draggable" x="25" y="15" text-anchor="middle" font-size="3px" alignment-baseline="middle" transform="translate(-6.96951 -0.597386)">Drag</text>
+        </svg>
 
 	  </article>
 </section>
@@ -38,25 +113,10 @@
 
     <section style="background-image: url('images/bg-01.jpg')">
 
-        <div id="container"> </div>
+        <div id="container"> 
 
-        <script src="ruffle/ruffle.js"></script>
-            <script>
-                window.RufflePlayer = window.RufflePlayer || {};
-                window.addEventListener("load", (event) => {
-                    const ruffle = window.RufflePlayer.newest();
-                    const player = ruffle.createPlayer();
-                    const container = document.getElementById("container"); 
-                    container.appendChild(player);
-                    player.load({
-                        url: "SharedBall.swf", 
-                        backgroundColor: "#000", 
-                     });
-                    player.style.width = "450px"; 
-                    player.style.height = "450px";
-                });
-            </script>  
-
+        <button type="button">Gols p/ Colecionadores</button><br><br><br>
+        </div>
 
     </section>
 	
@@ -93,7 +153,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3 text-muted mt-auto" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright: RIRO Biolabs LLC
+        © 2022 Copyright: RIRO Biolabs LLC Procuction
     </div>
 </footer>
 <!-- Footer -->
